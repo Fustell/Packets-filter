@@ -9,10 +9,13 @@ SRC_URI = "file://src/packetmod_main.c \
            file://include/filter_ipv4.h \
            file://Makefile"
 
-S = "${WORKDIR}"
 
 inherit module
 
+S = "${WORKDIR}"
+
 KERNEL_MODULE_AUTOLOAD = "packetmod"
 DEPENDS += "virtual/kernel"
-EXTRA_OEMAKE += "KCFLAGS+=-Wno-error -I${S}/include"
+
+INHIBIT_PACKAGE_DEBUG_SPLIT = "1"
+INHIBIT_PACKAGE_STRIP = "1"

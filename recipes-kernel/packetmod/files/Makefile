@@ -1,6 +1,6 @@
 obj-m += packetmod.o
 
-packetmod-y := \
+packetmod-objs := \
     src/packetmod_main.o \
     src/filter_mac.o \
     src/filter_ipv4.o \
